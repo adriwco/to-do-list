@@ -38,9 +38,9 @@ button i{
 input, select{
   padding: 0.25rem 0.5rem;
 }
-/*.hide{
+.hide{
   display: none;
-}*/
+}
 
 /*HEADER*/
 .todo-container{
@@ -56,7 +56,7 @@ input, select{
   border-bottom: 1px solid #ccc;
 }
 
-/*Form*/
+/*FORM*/
 #todo-form, #edit-form{
   padding: 1rem;
   border-bottom: 1px solid #ccc;
@@ -68,5 +68,40 @@ input, select{
 }
 .form-control{
   display: flex;
+  flex-wrap: wrap;
   gap: .3rem;
+}
+
+/*TOOLBAR*/
+#toolbar{
+  padding: 1rem;
+  border-radius: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+}
+#toolbar label{
+  font-size: 1rem;
+  display: block;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+#search{
+  border-right: 1px solid #ddd;
+  padding-right: 1rem;
+  margin-right: 1rem;
+}
+#search form{
+  display: grid;
+  gap: 0 .3rem;
+  grid-template-columns: 1fr auto;
+}
+#search input{
+  grid-column: 1/2;
+}
+#filter{
+  flex: 1;
+}
+#filter select{
+  padding: .36rem;
+  width: 100%;
 }
