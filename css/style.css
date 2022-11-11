@@ -55,3 +55,18 @@ input, select{
   padding: 0 1rem 1rem;
   border-bottom: 1px solid #ccc;
 }
+
+/*Form*/
+#todo-form, #edit-form{
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+#todo-form label, #edit-form label{
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: bold;
+}
+.form-control{
+  display: flex;
+  gap: .3rem;
+}
