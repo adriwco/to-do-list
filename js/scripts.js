@@ -41,3 +41,11 @@ todoForm.addEventListener("submit", (e) => {
     saveTodo(inputValue);
   }
 })
+
+document.addEventListener("click", (e) => {
+  const targetEl = e.target;
+  if(targetEl.classList.contains("finish-todo")){
+    console.log('ok')
+    // https://youtu.be/HSssE1PRQcA?t=2498
+  }
+})

@@ -7,9 +7,10 @@
   color: #333;
 }
 body{
-  background: url('../img/background.jpg');
+  background: url('../img/radiant-gradient.svg') no-repeat;
   background-position: center;
   background-size: cover;
+  height: 100vh;
 }
 button{
   background-color: #fdfdfd;
