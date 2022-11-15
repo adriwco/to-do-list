@@ -5,6 +5,7 @@ const todoList = document.querySelector("#todo-list");
 const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
+const inputSearch = document.querySelector("#site-search");
 let oldInputValue;
 
 // Funções
@@ -52,6 +53,20 @@ const updateTodo = (editInputValue) => {
   });
 }
 
+const hideTodos = (todos, inputValueSearch) => {
+  todos
+  .filter(todo => !todo.textContent.toLowerCase().includes(inputValueSearch))
+  .forEach(todo => {
+    todo.classList.add('hide')
+  })
+ }
+ const showTodos = (todos, inputValueSearch) => {
+  todos
+  .filter(todo => todo.textContent.includes(inputValueSearch))
+  .forEach(todo => {
+    todo.classList.remove('hide')
+  })
+ }
 // Eventos
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -97,8 +112,14 @@ editForm.addEventListener("submit", (e) => {
   if(editInputValue){
     updateTodo(editInputValue);
   }
-
   toggleForms();
 })
 
-// Proxio passo: busca, filtro e gerenciar pela local storage
+ // Proxio passo: busca, filtro e gerenciar pela local storage 
+
+inputSearch.addEventListener("input", event => {
+  const inputValueSearch = event.target.value.trim().toLowerCase()
+  const todos = filterH3 = Array.from(todoList.children)
+  hideTodos(todos, inputValueSearch)
+  showTodos(todos, inputValueSearch)
+})

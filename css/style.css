@@ -40,7 +40,7 @@ input, select{
   padding: 0.25rem 0.5rem;
 }
 .hide{
-  display: none;
+  display: none !important;
 }
 
 /*HEADER*/
