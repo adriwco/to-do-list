@@ -53,20 +53,26 @@ const updateTodo = (editInputValue) => {
   });
 }
 
-const hideTodos = (todos, inputValueSearch) => {
-  todos
-  .filter(todo => !todo.textContent.toLowerCase().includes(inputValueSearch))
-  .forEach(todo => {
-    todo.classList.add('hide')
+const filterTodos = (todos, inputValueSearch, returnMatchedTodos) => todos
+  .filter(todo => {
+    const matchedTodos = todo.textContent.toLowerCase().includes(inputValueSearch)
+    return returnMatchedTodos ? matchedTodos : !matchedTodos
   })
+const manipulateClasses = (todo, classToAdd, classToRemove) => {
+  todo.forEach(todo => {
+    todo.classList.add(classToAdd)
+    todo.classList.remove(classToRemove)
+  })
+}
+const hideTodos = (todos, inputValueSearch) => {
+  const todosToHide = filterTodos(todos, inputValueSearch, false)
+  manipulateClasses(todosToHide, 'hide', null)
  }
  const showTodos = (todos, inputValueSearch) => {
-  todos
-  .filter(todo => todo.textContent.includes(inputValueSearch))
-  .forEach(todo => {
-    todo.classList.remove('hide')
-  })
+  const todosToShow = filterTodos(todos, inputValueSearch, true)
+  manipulateClasses(todosToShow, null, 'hide')
  }
+
 // Eventos
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -123,3 +129,5 @@ inputSearch.addEventListener("input", event => {
   hideTodos(todos, inputValueSearch)
   showTodos(todos, inputValueSearch)
 })
+
+// https://youtu.be/OosED-pYNkQ?t=1349  (refatorar a função hideTodos() e showTodos())
