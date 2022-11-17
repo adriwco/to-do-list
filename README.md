@@ -12,6 +12,11 @@
 
 ***
 #### 🔹Pré-visualização (screenshot):
-[![to-do-list](https://user-images.githubusercontent.com/80191040/202575209-52d14296-cbf7-43c0-9d8f-4f5e4135edc7.png)](https://adriwco.github.io/to-do-list)
+<p align="center">
+<a href="https://adriwco.github.io/to-do-list">
+   <img src="https://user-images.githubusercontent.com/80191040/202575897-f5ba07e6-2d32-4cab-8296-9d28afe41c73.png" alt="to-do-list">
+</a>
+</p>
+
 ***
 ### <p align="center">🔹[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)🔹</p>
