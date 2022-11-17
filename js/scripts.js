@@ -36,7 +36,7 @@ const saveTodo = (text) => {
   todoList.appendChild(todo);
   todoInput.value = "";
   todoInput.focus();
-} 
+}
 
 const toggleForms = () => {
   editForm.classList.toggle("hide");
@@ -119,7 +119,6 @@ document.addEventListener("click", (e) => {
   }
 
   if(targetEl.classList.contains("finish-todo")){
-    console.log('ok')
     parentEl.classList.toggle("done");
   }
 

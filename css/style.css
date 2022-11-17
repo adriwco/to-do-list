@@ -127,6 +127,18 @@ input, select{
 }
 .todo button{
   margin-left: .4rem;
+  border-radius: 5px;
+}
+.finish-todo{
+  background-color: #197f52;
+}
+.edit-todo{
+  background-color: #edd400;
+}
+.remove-todo{
+  background-color: #d83700;
+  padding-left: 14px;
+  padding-right: 14px;
 }
 .done{
   background-color: #395169;
@@ -134,5 +146,10 @@ input, select{
 .done h3{
   color: #fff;
   text-decoration: line-through;
+  text-decoration-color: #102f5e;
   font-style: italic;
+}
+.done .edit-todo{
+  background-color: #395169;
+  cursor: not-allowed;
 }
