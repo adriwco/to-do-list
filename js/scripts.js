@@ -6,6 +6,7 @@ const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 const inputSearch = document.querySelector("#site-search");
+const contadorMsg = document.querySelector('#contador');
 let oldInputValue;
 
 // Funções
@@ -73,6 +74,32 @@ const hideTodos = (todos, inputValueSearch) => {
   manipulateClasses(todosToShow, null, 'hide')
  }
 
+  function mudarCorContador(numero){
+    if(numero >= 11 && numero <= 32){
+      contadorMsg.style.color = "#999900";
+    }else if(numero >= 33 && numero <= 58){
+      contadorMsg.style.color = "#CC6600";
+    }else if(numero === 59){
+      contadorMsg.style.color = "#FF0000";
+    }else{
+      contadorMsg.style.color = "#000";
+    }
+  }
+
+// JQuery 3.5.1
+$(document).ready(function(){
+  $('input').bind('cut copy paste',function(e) {
+      e.preventDefault();
+  });
+});
+$(document).on("input", "#todo-input", function () {
+  const limite = 0;
+  const caracteresDigitados = $(this).val().length;
+  const caracteresRestantes = limite + caracteresDigitados;
+  $("#contador").text(caracteresRestantes);
+  mudarCorContador(caracteresRestantes);
+});
+
 // Eventos
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -121,8 +148,6 @@ editForm.addEventListener("submit", (e) => {
   toggleForms();
 })
 
- // Proxio passo: busca, filtro e gerenciar pela local storage 
-
 inputSearch.addEventListener("input", event => {
   const inputValueSearch = event.target.value.trim().toLowerCase()
   const todos = filterH3 = Array.from(todoList.children)
@@ -130,4 +155,4 @@ inputSearch.addEventListener("input", event => {
   showTodos(todos, inputValueSearch)
 })
 
-// https://youtu.be/OosED-pYNkQ?t=1349  (refatorar a função hideTodos() e showTodos())
+ // Proxio passo: filtro e gerenciar pela local storage 

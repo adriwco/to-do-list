@@ -25,17 +25,18 @@
     <form id="todo-form">
       <label for="todo-input">Adicione sua tarefa:</label>
       <div class="form-control">
-        <input type="text" id="todo-input" name="todo-input" placeholder="O que você vai fazer?">
+        <input type="text" id="todo-input" name="todo-input" maxlength="59" placeholder="Máximo de Caracteres: 59">
         <button type="submit">
           <i class="fa-thin fa-plus"></i>
         </button>
+        <span class="contador"><span id="contador">0</span> / 59</span>
       </div>
     </form>
 
     <form id="edit-form" class="hide">
       <label for="todo-input">Edite sua tarefa:</label>
       <div class="form-control">
-        <input type="text" id="edit-input" name="todo-input">
+        <input type="text" id="edit-input" name="todo-input" maxlength="59">
         <button type="submit">
           <i class="fa-solid fa-check-double"></i>
         </button>
@@ -47,7 +48,7 @@
       <div id="search">
         <form>
           <label for="site-search">Pesquisar:</label>
-          <input type="search" id="site-search" name="site-search" placeholder="Buscar Tarefa">
+          <input type="search" id="site-search" name="site-search" maxlength="59" placeholder="Buscar Tarefa">
           <button id="arese-button"><i class="fa-solid fa-delete-left"></i></button>
         </form>
       </div>
