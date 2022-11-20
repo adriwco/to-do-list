@@ -1,5 +1,9 @@
 ## to-do-list
-🔹Lista de afazeres em JS🔹
+<p align="center">
+⭐Lista de afazeres em JS⭐
+</p>
+
+🔹Funções: adicionar, editar, deletar, concluir, pesquisar e filtrar.
 ***
 #### 🔹Tecnologias sendo utilizadas:
 
