@@ -91,6 +91,11 @@ $(document).ready(function(){
   $('input').bind('cut copy paste',function(e) {
       e.preventDefault();
   });
+  $('input').on('keypress', function(e) {
+    if (e.which === 32 && $(this).val().length === 0) {
+      e.preventDefault();
+    }
+  });
 });
 $(document).on("input", "#todo-input", function () {
   const limite = 0;
